@@ -64,8 +64,8 @@ env: {
   siteTitle: 'Your Company',
   siteDescription: 'Your company description.',
   siteKeywords: 'your company keywords',
-  siteUrl: 'https://next-tailwind-blue.vercel.app',
-  siteImagePreviewUrl: '/images/blue.png',
+  siteUrl: 'https://doggystickers.xyz',
+  siteImagePreviewUrl: '/images/main.jpg',
   twitterHandle: '@your_handle'
 } 
 ```
