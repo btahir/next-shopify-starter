@@ -16,16 +16,15 @@ purchase the items. You can see this play out in the example store. Yes - the st
 
 ## Mobile Responsive
 
-<div align="center" width="100">
-<img width="400" height="400" src="https://github.com/btahir/next-shopify-starter/blob/main/public/images/responsive-main.gif">
-<img width="400" height="400" src="https://github.com/btahir/next-shopify-starter/blob/main/public/images/responsive-cart.gif">
+<div align="center">
+<img width="250" height="250" src="https://github.com/btahir/next-shopify-starter/blob/main/public/images/responsive-main.gif">
+<img width="250" height="250" src="https://github.com/btahir/next-shopify-starter/blob/main/public/images/responsive-cart.gif">
 </div>
 
 
 ## The Tech
 
 * Next.js + Tailwind CSS
-* React Hooks & Context
 * GraphQL
 * localStorage to persist user session
 * Shopify
