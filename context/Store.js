@@ -46,11 +46,12 @@ export function CartProvider({ children }) {
         ...cart,
         newItem
       ])
+
       const response = createShopifyCheckout(newItem)
       setCheckoutId(response.checkout.id)
       setCheckoutUrl(response.checkout.webUrl)
-      // store locally
       saveLocalData(newItem, response.checkout.id, response.checkout.webUrl)
+    
     } else {
       let newCart = [...cart]
       let itemAdded = false
@@ -69,19 +70,17 @@ export function CartProvider({ children }) {
         // if its a new item than add it to the end
         newCartWithItem = [...newCart, newItem]
       }
+      
       setCart(newCartWithItem)
       await updateShopifyCheckout(newCartWithItem, checkoutId)
-      // store locally
       saveLocalData(newCartWithItem, checkoutId, checkoutUrl)
-
     }
     setisLoading(false)
   }
 
   async function updateCartItemQuantity(id, quantity) {
-
     setisLoading(true)
-    let newQuantity = Math.floor(quantity)
+    let newQuantity = Math.floor(quantity)    
     if (quantity === '') {
       newQuantity = ''
     }
@@ -91,9 +90,11 @@ export function CartProvider({ children }) {
         item.variantQuantity = newQuantity
       }
     })
+    
     // take out zeroes items
     newCart = newCart.filter(i => i.variantQuantity !== 0)
     setCart(newCart)
+    
     await updateShopifyCheckout(newCart, checkoutId)
     saveLocalData(newCart, checkoutId, checkoutUrl)
     setisLoading(false)
