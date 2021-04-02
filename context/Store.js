@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react'
-import { updateShopifyCheckout, getLocalData, saveLocalData } from '@/utils/helpers'
+import { createShopifyCheckout, updateShopifyCheckout, getLocalData, saveLocalData } from '@/utils/helpers'
 
 const CartContext = createContext()
 const AddToCartContext = createContext()
@@ -46,15 +46,7 @@ export function CartProvider({ children }) {
         ...cart,
         newItem
       ])
-      // send shopify update
-      const data = await fetch('/api/create-checkout', {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify({ id: newItem['variantId'], quantity: newItem['variantQuantity'] }),
-      })
-      const response = await data.json()
+      const response = createShopifyCheckout(newItem)
       setCheckoutId(response.checkout.id)
       setCheckoutUrl(response.checkout.webUrl)
       // store locally
