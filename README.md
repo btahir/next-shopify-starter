@@ -1,7 +1,7 @@
 # Next.js + Tailwind CSS + Shopify Starter
 
 <div align="center">
-<img src="https://github.com/btahir/next-shopify-starter/blob/main/public/images/main.jpg">
+<img src="https://github.com/btahir/next-shopify-starter/blob/main/public/images/demo-store.gif">
 <p align="center">
   <a href="https://doggystickers.xyz/">Live Demo</a> •
   <a href="https://nextails.com/">See more starters</a> •
@@ -13,6 +13,14 @@ This is a fully functional eCommerce store that uses Next.js + Tailwind CSS in t
 
 We use GraphQL to query our Shopify data and store the cart information in localStorage to persist user session. Finally - we use Shopify Checkout to let the user
 purchase the items. You can see this play out in the example store. Yes - the store is functional and you can buy the stickers. :smiley:
+
+## Mobile Responsive
+
+<div align="center" width="100">
+<img width="450" height="400" src="https://github.com/btahir/next-shopify-starter/blob/main/public/images/responsive-main.gif">
+<img width="450" height="400" src="https://github.com/btahir/next-shopify-starter/blob/main/public/images/responsive-cart.gif">
+</div>
+
 
 ## The Tech
 
