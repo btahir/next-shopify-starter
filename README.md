@@ -90,8 +90,8 @@ Update the manifest.json file and the icons under the public/images/icons folder
 
 You can use free tools online such as https://realfavicongenerator.net/ to quickly generate all the different icon sizes and favicon.ico file.
 
-### Buy Me Coffee
+### Buy Me Coffee! :coffee:
 
-If you found thi useful and want to show your apprciation please consider buying me a coffee :)
+If you found this useful and want to show your appreciation please consider buying me a coffee :)
 
-You can also buy some Doggy Stickers from the store! :D
+You can also buy some Doggy Stickers from the [store](https://doggystickers.xyz/ "store")! :dog:
