@@ -10,7 +10,7 @@ module.exports = withPWA({
     siteTitle: 'Doggy Stickers',
     siteDescription: 'Get some Doggy Stickers!',
     siteKeywords: 'dog, stickers, fun',
-    siteUrl: 'https://doggystickers.xyz',
+    siteUrl: 'https://www.doggystickers.xyz',
     siteImagePreviewUrl: '/images/main.jpg',
     twitterHandle: '@deepwhitman'
   },

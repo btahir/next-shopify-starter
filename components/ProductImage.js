@@ -7,7 +7,7 @@ function ProductImage({ images }) {
   const [mainImg, setMainImg] = useState(images[0].node)
   const ref = useRef()
 
-  const scroll = (scrollOffset) => {
+  function scroll(scrollOffset) {
     ref.current.scrollLeft += scrollOffset
   }
 

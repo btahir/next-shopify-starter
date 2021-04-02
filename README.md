@@ -16,10 +16,13 @@ purchase the items. You can see this play out in the example store. Yes - the st
 ## The Tech
 
 * Next.js + Tailwind CSS
+* React Hooks & Context
 * GraphQL
 * localStorage to persist user session
 * Shopify
 * Vercel
+* Font Awesome Icons
+* Josefin Sans Google Font
 
 ## How to use
 

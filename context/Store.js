@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react'
+import { updateShopifyCheckout, getLocalData, saveLocalData } from '@/utils/helpers'
 
 const CartContext = createContext()
 const AddToCartContext = createContext()
@@ -16,22 +17,6 @@ export function useUpdateCartQuantityContext() {
   return useContext(UpdateCartQuantityContext)
 }
 
-async function updateShopifyCheckout(updatedCart, checkoutId) {
-  const lineItems = updatedCart.map(item => {
-    return {
-      variantId: item['variantId'],
-      quantity: item['variantQuantity']
-    }
-  })
-  await fetch('/api/update-checkout', {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify({ checkoutId, lineItems }),
-  })
-}
-
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([])
   const [checkoutId, setCheckoutId] = useState('')
@@ -40,7 +25,7 @@ export function CartProvider({ children }) {
 
   useEffect(() => {
     // get any local session
-    const localData = JSON.parse(localStorage.getItem(process.env.NEXT_PUBLIC_LOCAL_STORAGE_NAME))
+    const localData = getLocalData()
     if (localData) {
       if (Array.isArray(localData[0])) {
         setCart([...localData[0]])
@@ -73,7 +58,7 @@ export function CartProvider({ children }) {
       setCheckoutId(response.checkout.id)
       setCheckoutUrl(response.checkout.webUrl)
       // store locally
-      localStorage.setItem(process.env.NEXT_PUBLIC_LOCAL_STORAGE_NAME, JSON.stringify([newItem, response.checkout.id, response.checkout.webUrl]))
+      saveLocalData(newItem, response.checkout.id, response.checkout.webUrl)
     } else {
       let newCart = [...cart]
       let itemAdded = false
@@ -95,7 +80,7 @@ export function CartProvider({ children }) {
       setCart(newCartWithItem)
       await updateShopifyCheckout(newCartWithItem, checkoutId)
       // store locally
-      localStorage.setItem(process.env.NEXT_PUBLIC_LOCAL_STORAGE_NAME, JSON.stringify([newCartWithItem, checkoutId, checkoutUrl]))
+      saveLocalData(newCartWithItem, checkoutId, checkoutUrl)
 
     }
     setisLoading(false)
@@ -118,7 +103,7 @@ export function CartProvider({ children }) {
     newCart = newCart.filter(i => i.variantQuantity !== 0)
     setCart(newCart)
     await updateShopifyCheckout(newCart, checkoutId)
-    localStorage.setItem(process.env.NEXT_PUBLIC_LOCAL_STORAGE_NAME, JSON.stringify([newCart, checkoutId, checkoutUrl]))
+    saveLocalData(newCart, checkoutId, checkoutUrl)
     setisLoading(false)
   }
 
