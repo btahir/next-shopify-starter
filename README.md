@@ -41,8 +41,10 @@ You can extend this to query multiple collections or your whole store.
 #### A note on pagination in the GraphQL queries
 
 The graphQL queries are all hardcoded to pull the maximum number of products/variants/images which
-is set to 250 by Shopify. I did this for to keep things simple rather than setting up any pagination and making the queries complicated.
-This should work for the majority of use cases as having over 250 of these items is rare.
+is set to 250 by Shopify. I did this to keep things simple. Pagination would have made the queries complicated
+and 250 items is enough for most use cases.
+
+If you require pagination you will have to keep track of the [cursor](https://youtu.be/S37WsC8GzSA "graphql pagination") field and keep querying the data until you fetch all items.
 
 ### Setup Environment variables
 
@@ -116,8 +118,8 @@ as countless other devs much more capable than me who put out their awesome work
 
 ### License
 
-I have open sourced this code under the MIT License in the hope that it this helps people navigate their way around JAMStack eCommerce stores
-as the Gastby Swag Store did for me when I first started out.
+I have open sourced this code under the MIT License in the hope that if this helps people navigate their way around JAMStack eCommerce stores
+as the Gatsby Swag Store did for me when I first started out.
 
 ### Buy Me Coffee! :coffee:
 
