@@ -21,8 +21,8 @@ function Nav() {
       <div className="flex items-center justify-between mx-auto max-w-6xl px-6 pb-2 pt-4 md:pt-6">
         <Link href="/" passHref>
           <a className="focus:outline-none cursor-pointer">
-            <h1 className="flex no-underline">
-              <img height="32" width="32" alt="logo" className="h-6 w-6 mr-2 object-contain" src="/icon.svg" />
+            <h1 className="flex items-center no-underline">
+              <img height="32" width="32" alt="logo" className="h-6 w-6 mr-1 object-contain" src="/icon.svg" />
               <span className="text-xl font-primary font-bold tracking-tight pt-1">
                 {process.env.siteTitle}
               </span>
