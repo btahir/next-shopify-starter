@@ -3,7 +3,7 @@
 This is an attempt at building a minimal but fully functional eCommerce store that uses Next.js + Tailwind CSS in the front end and leverages the Shopify Storefront API
 to interact with your Shopify backend.
 
-You can see it in action on this live [Shopify store](https://doggystickers.xyz/ "Shopify store")
+You can see it in action on this live [Shopify store link](https://doggystickers.xyz/ "Shopify store")
 
 ![store preview](https://github.com/btahir/next-shopify-starter/blob/main/public/images/main.jpg)
 
@@ -92,6 +92,6 @@ You can use free tools online such as https://realfavicongenerator.net/ to quick
 
 ### Buy Me Coffee! :coffee:
 
-If you found this useful and want to show your appreciation please consider buying me a coffee :)
+If you found this useful and want to show your appreciation please consider buying me a [coffee link](https://www.buymeacoffee.com/neum "coffee") :smiley:
 
-You can also buy some Doggy Stickers from the [store](https://doggystickers.xyz/ "store")! :dog:
+You can also buy some Doggy Stickers from the [store link](https://doggystickers.xyz/ "store")! :dog:
