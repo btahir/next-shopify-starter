@@ -1,23 +1,26 @@
 # Next.js + Tailwind CSS + Shopify Starter
 
-This is an attempt at building a minimal but fully functional eCommerce store that uses Next.js + Tailwind CSS in the front end and leverages the Shopify Storefront API
-to interact with your Shopify backend.
+<div align="center">
+<img src="https://github.com/btahir/next-shopify-starter/blob/main/public/images/main.jpg">
+<p align="center">
+  <a href="https://doggystickers.xyz/">Live Demo</a> •
+  <a href="https://twitter.com/deepwhitman">Follow Me</a>
+</p>
+</div>
 
-You can see it in action on this live [Shopify store](https://doggystickers.xyz/ "Shopify store")
+This is a fully functional eCommerce store that uses Next.js + Tailwind CSS in the front end and leverages the Shopify Storefront API to interact with your Shopify backend. You can see a Live Demo [here](https://doggystickers.xyz/ "Shopify store").
 
-![store preview](https://github.com/btahir/next-shopify-starter/blob/main/public/images/main.jpg)
-
-Yes - you can buy the stickers. :)
-
-The store was inspired by the awesome Gatsby Swag Store.
+We use GraphQL to query our Shopify data and store the cart information in localStorage to persist user session. Finally - we use Shopify Checkout to let the user
+purchase the items. You can see this play out in the example store. Yes - the store is functional and you can buy the stickers. :smiley:
 
 ## The Tech
 
 * Next.js + Tailwind CSS
-* React Hooks
 * GraphQL
+* localStorage to persist user session
 * Shopify
 * Vercel
+
 ## How to use
 
 By default, the store is set to query and show all products in one collection. 
@@ -26,10 +29,10 @@ You can extend this to query multiple collections or your whole store.
 #### A note on pagination in the GraphQL queries
 
 The graphQL queries are all hardcoded to pull the maximum number of products/variants/images which
-is set to 250 by Shopify. I did this for simplicity rather than setting up any pagination and making the queries complicated.
+is set to 250 by Shopify. I did this for to keep things simple rather than setting up any pagination and making the queries complicated.
 This should work for the majority of use cases as having over 250 of these items is rare.
 
-### Setup Envornment variables
+### Setup Environment variables
 
 Create a .env.local file in the root directory. You need to add these 4 variables:
 
@@ -41,7 +44,7 @@ NEXT_PUBLIC_LOCAL_STORAGE_NAME=
 ```
 
 The SHOPIFY_STORE_FRONT_ACCESS_TOKEN and SHOPIFY_STORE_DOMAIN (it will be something like DOMAIN_NAME.myshopify.com) are needed to access
-the Shopify Storefront API (make sure you have set it up in your [Shopify store](https://shopify.dev/docs/storefront-api/getting-started "Shopify store")).
+the Shopify Storefront API (make sure you have set it up in your Shopify store. See [docs](https://shopify.dev/docs/storefront-api/getting-started "Shopify store")) for more information.
 
 SHOPIFY_COLLECTION is the name of the collection you want to pull in and NEXT_PUBLIC_LOCAL_STORAGE_NAME is the name of the key
 your users will store their cart information under. The exact name isn't that important although I suggest you make it unique so
@@ -90,8 +93,22 @@ Update the manifest.json file and the icons under the public/images/icons folder
 
 You can use free tools online such as https://realfavicongenerator.net/ to quickly generate all the different icon sizes and favicon.ico file.
 
+### Deployment
+
+You can deploy this using any number of services. Vercel and Netlify are the ones I prefer and very easy to setup and sync with your Github repo.
+
+### Credit
+
+The store was inspired by the awesome [Gatsby Swag Store](https://github.com/gatsbyjs/store.gatsbyjs.org "gatsby store") as well
+as countless other devs much more capable than me who put out their awesome work for free. 
+
+### License
+
+I have open sourced this code under the MIT License in the hope that it this helps people navigate their way around JAMStack eCommerce stores
+as the Gastby Swag Store did for me when I first started out.
+
 ### Buy Me Coffee! :coffee:
 
-If you found this useful and want to show your appreciation please consider buying me a [coffee](https://www.buymeacoffee.com/neum "coffee") :smiley:
+If you did find this useful and want to show your appreciation you can buy me a [coffee](https://www.buymeacoffee.com/neum "coffee") :smiley:
 
 You can also buy some Doggy Stickers from the [store](https://doggystickers.xyz/ "store")! :dog:
