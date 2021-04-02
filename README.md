@@ -17,8 +17,8 @@ purchase the items. You can see this play out in the example store. Yes - the st
 ## Mobile Responsive
 
 <div align="center" width="100">
-<img width="450" height="400" src="https://github.com/btahir/next-shopify-starter/blob/main/public/images/responsive-main.gif">
-<img width="450" height="400" src="https://github.com/btahir/next-shopify-starter/blob/main/public/images/responsive-cart.gif">
+<img width="400" height="400" src="https://github.com/btahir/next-shopify-starter/blob/main/public/images/responsive-main.gif">
+<img width="400" height="400" src="https://github.com/btahir/next-shopify-starter/blob/main/public/images/responsive-cart.gif">
 </div>
 
 
