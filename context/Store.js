@@ -47,7 +47,8 @@ export function CartProvider({ children }) {
         newItem
       ])
 
-      const response = createShopifyCheckout(newItem)
+      const response = await createShopifyCheckout(newItem)
+      console.log(response)
       setCheckoutId(response.checkout.id)
       setCheckoutUrl(response.checkout.webUrl)
       saveLocalData(newItem, response.checkout.id, response.checkout.webUrl)

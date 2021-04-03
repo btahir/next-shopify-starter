@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import Price from '@/components/Price'
+import { totalCartPrice } from '@/utils/helpers'
 
 function CartTable({ cart }) {
   const updateCartQuantity = useUpdateCartQuantityContext()
@@ -12,22 +13,11 @@ function CartTable({ cart }) {
 
   useEffect(() => {
     setCartItems(cart)
-    setSubtotal(totalCartPrice())
+    setSubtotal(totalCartPrice(cart))
   }, [cart])
 
   function updateItem(id, quantity) {
     updateCartQuantity(id, quantity)
-  }
-
-  function totalCartPrice() {
-    if (cart.length === 0) {
-      return 0
-    }
-    else {
-      let totalPrice = 0
-      cart.forEach(item => totalPrice += parseInt(item.variantQuantity) * parseFloat(item.variantPrice))
-      return Math.round(totalPrice * 100) / 100
-    }
   }
 
   return (
