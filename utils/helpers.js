@@ -34,7 +34,7 @@ export async function updateShopifyCheckout(updatedCart, checkoutId) {
   })
 }
 
-export function totalCartPrice(cart) {
+export function getCartSubTotal(cart) {
   if (cart.length === 0) {
     return 0
   }

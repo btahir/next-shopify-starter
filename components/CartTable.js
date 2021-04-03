@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import Price from '@/components/Price'
-import { totalCartPrice } from '@/utils/helpers'
+import { getCartSubTotal } from '@/utils/helpers'
 
 function CartTable({ cart }) {
   const updateCartQuantity = useUpdateCartQuantityContext()
@@ -13,7 +13,7 @@ function CartTable({ cart }) {
 
   useEffect(() => {
     setCartItems(cart)
-    setSubtotal(totalCartPrice(cart))
+    setSubtotal(getCartSubTotal(cart))
   }, [cart])
 
   function updateItem(id, quantity) {
