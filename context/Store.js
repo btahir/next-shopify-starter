@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react'
-import { createShopifyCheckout, updateShopifyCheckout, getLocalData, saveLocalData } from '@/utils/helpers'
+import { createShopifyCheckout, updateShopifyCheckout, setLocalData, saveLocalData } from '@/utils/helpers'
 
 const CartContext = createContext()
 const AddToCartContext = createContext()
@@ -24,17 +24,19 @@ export function CartProvider({ children }) {
   const [isLoading, setisLoading] = useState(false)
 
   useEffect(() => {
-    // get any local session
-    const localData = getLocalData()
-    if (localData) {
-      if (Array.isArray(localData[0])) {
-        setCart([...localData[0]])
-      }
-      else {
-        setCart([localData[0]])
-      }
-      setCheckoutId(localData[1])
-      setCheckoutUrl(localData[2])
+    setLocalData(setCart, setCheckoutId, setCheckoutUrl)
+  }, [])
+
+  useEffect(() => {
+    // do this to make sure multiple tabs are always in sync
+    const onReceiveMessage = (e) => {
+      console.log(e)
+      setLocalData(setCart, setCheckoutId, setCheckoutUrl)
+    }
+
+    window.addEventListener("storage", onReceiveMessage);
+    return () => {
+      window.removeEventListener("storage", onReceiveMessage);
     }
   }, [])
 
@@ -51,7 +53,7 @@ export function CartProvider({ children }) {
       setCheckoutId(response.checkout.id)
       setCheckoutUrl(response.checkout.webUrl)
       saveLocalData(newItem, response.checkout.id, response.checkout.webUrl)
-    
+
     } else {
       let newCart = [...cart]
       let itemAdded = false
@@ -70,7 +72,7 @@ export function CartProvider({ children }) {
         // if its a new item than add it to the end
         newCartWithItem = [...newCart, newItem]
       }
-      
+
       setCart(newCartWithItem)
       await updateShopifyCheckout(newCartWithItem, checkoutId)
       saveLocalData(newCartWithItem, checkoutId, checkoutUrl)
@@ -80,7 +82,7 @@ export function CartProvider({ children }) {
 
   async function updateCartItemQuantity(id, quantity) {
     setisLoading(true)
-    let newQuantity = Math.floor(quantity)    
+    let newQuantity = Math.floor(quantity)
     if (quantity === '') {
       newQuantity = ''
     }
@@ -90,11 +92,11 @@ export function CartProvider({ children }) {
         item.variantQuantity = newQuantity
       }
     })
-    
+
     // take out zeroes items
     newCart = newCart.filter(i => i.variantQuantity !== 0)
     setCart(newCart)
-    
+
     await updateShopifyCheckout(newCart, checkoutId)
     saveLocalData(newCart, checkoutId, checkoutUrl)
     setisLoading(false)
