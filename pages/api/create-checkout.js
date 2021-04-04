@@ -1,6 +1,6 @@
 import { createCheckout } from '@/lib/shopify'
 
-export default async function (req, res) {
+export default async function setupCheckout(req, res) {
 
   const checkout = await createCheckout(req.body.id, req.body.quantity)
 
