@@ -18,7 +18,7 @@ function ProductImage({ images }) {
           src={mainImg.originalSrc}
           alt={mainImg.altText}
           layout="fill"
-          className="transform duration-500 ease-in-out hover:scale-125"
+          className="transform duration-500 ease-in-out hover:scale-105"
         />
       </div>
       <div className="relative flex border-t border-palette-lighter">
