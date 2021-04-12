@@ -24,7 +24,7 @@ function ProductImage({ images }) {
       <div className="relative flex border-t border-palette-lighter">
         <button
           aria-label="left-scroll"
-          className="h-32 bg-palette-lighter hover:bg-palette-light focus:outline-none absolute left-0 z-10 opacity-75"
+          className="h-32 bg-palette-lighter hover:bg-palette-light  absolute left-0 z-10 opacity-75"
           onClick={() => scroll(-300)}
         >
           <FontAwesomeIcon icon={faArrowLeft} className="w-3 mx-1 text-palette-primary" />
@@ -38,7 +38,7 @@ function ProductImage({ images }) {
             images.map((imgItem, index) => (
               <button
                 key={index}
-                className="relative w-40 h-32 flex-shrink-0 rounded-sm focus:outline-none"
+                className="relative w-40 h-32 flex-shrink-0 rounded-sm "
                 onClick={() => setMainImg(imgItem.node)}
               >
                 <Image
@@ -53,7 +53,7 @@ function ProductImage({ images }) {
         </div>
         <button
           aria-label="right-scroll"
-          className="h-32 bg-palette-lighter hover:bg-palette-light focus:outline-none absolute right-0 z-10 opacity-75"
+          className="h-32 bg-palette-lighter hover:bg-palette-light  absolute right-0 z-10 opacity-75"
           onClick={() => scroll(300)}
         >
           <FontAwesomeIcon icon={faArrowRight} className="w-3 mx-1 text-palette-primary" />

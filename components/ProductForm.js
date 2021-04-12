@@ -12,10 +12,10 @@ function ProductForm({ title, handle, variants, setVariantPrice, mainImg }) {
 
   const atcBtnStyle = isLoading ?
     `pt-3 pb-2 bg-palette-primary text-white w-full mt-2 rounded-sm font-primary font-semibold text-xl flex 
-                      justify-center items-baseline focus:outline-none hover:bg-palette-dark opacity-25 cursor-none`
+                      justify-center items-baseline  hover:bg-palette-dark opacity-25 cursor-none`
     :
     `pt-3 pb-2 bg-palette-primary text-white w-full mt-2 rounded-sm font-primary font-semibold text-xl flex 
-                      justify-center items-baseline focus:outline-none hover:bg-palette-dark`
+                      justify-center items-baseline  hover:bg-palette-dark`
 
   function handleSizeChange(e) {
     setVariantId(e)
