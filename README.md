@@ -84,7 +84,7 @@ NEXT_PUBLIC_LOCAL_STORAGE_NAME=
 ```
 
 The SHOPIFY_STORE_FRONT_ACCESS_TOKEN and SHOPIFY_STORE_DOMAIN (it will be something like DOMAIN_NAME.myshopify.com) are needed to access
-the Shopify Storefront API (make sure you have set it up in your Shopify store. See [docs](https://shopify.dev/docs/storefront-api/getting-started "Shopify store")) for more information.
+the Shopify Storefront API (make sure you have set it up in your Shopify store. See [docs](https://shopify.dev/docs/storefront-api/getting-started "Shopify store") for more information.
 
 SHOPIFY_COLLECTION is the name of the collection you want to pull in and NEXT_PUBLIC_LOCAL_STORAGE_NAME is the name of the key
 your users will store their cart information under. The exact name isn't that important although I suggest you make it unique so
