@@ -71,7 +71,7 @@ function CartTable({ cart }) {
               <td className="font-primary font-medium px-4 sm:px-6 py-4">
                 <button
                   aria-label="delete-item"
-                  className="focus:outline-none"
+                  className=""
                   onClick={() => updateItem(item.variantId, 0)}
                 >
                   <FontAwesomeIcon icon={faTimes} className="w-8 h-8 text-palette-primary border border-palette-primary p-1 hover:bg-palette-lighter" />
