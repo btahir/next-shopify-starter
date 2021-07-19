@@ -1,3 +1,5 @@
+import { createCheckout, updateCheckout } from '@/lib/shopify'
+
 export function saveLocalData(cart, checkoutId, checkoutUrl) {
   localStorage.setItem(process.env.NEXT_PUBLIC_LOCAL_STORAGE_NAME, JSON.stringify([cart, checkoutId, checkoutUrl]))
 }
@@ -22,15 +24,8 @@ export function setLocalData(setCart, setCheckoutId, setCheckoutUrl) {
 }
 
 export async function createShopifyCheckout(newItem) {
-  const data = await fetch('/api/create-checkout', {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify({ id: newItem['variantId'], quantity: newItem['variantQuantity'] }),
-  })
-  const response = await data.json()
-  return response
+  const data = await createCheckout( newItem['variantId'], newItem['variantQuantity'])  
+  return data
 }
 
 export async function updateShopifyCheckout(updatedCart, checkoutId) {
@@ -40,13 +35,7 @@ export async function updateShopifyCheckout(updatedCart, checkoutId) {
       quantity: item['variantQuantity']
     }
   })
-  await fetch('/api/update-checkout', {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify({ checkoutId, lineItems }),
-  })
+  await updateCheckout(checkoutId, lineItems)
 }
 
 export function getCartSubTotal(cart) {
