@@ -77,9 +77,9 @@ If you require pagination you will have to keep track of the [cursor](https://yo
 Create a .env.local file in the root directory. You need to add these 4 variables:
 
 ```
-SHOPIFY_STORE_FRONT_ACCESS_TOKEN=
-SHOPIFY_STORE_DOMAIN=
-SHOPIFY_COLLECTION=
+NEXT_PUBLIC_SHOPIFY_STORE_FRONT_ACCESS_TOKEN=
+NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN=
+NEXT_PUBLIC_SHOPIFY_COLLECTION=
 NEXT_PUBLIC_LOCAL_STORAGE_NAME=
 ```
 
