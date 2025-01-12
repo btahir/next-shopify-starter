@@ -146,9 +146,3 @@ as countless other devs much more capable than me who put out their awesome work
 
 I have open sourced this code under the MIT License in the hope that if this helps people navigate their way around JAMStack eCommerce stores
 as the Gatsby Swag Store did for me when I first started out.
-
-### Buy Me Coffee! :coffee:
-
-If you did find this useful and want to show your appreciation you can buy me a [coffee](https://www.buymeacoffee.com/neum "coffee") :smiley:
-
-You can also buy some Doggy Stickers from the [store](https://doggystickers.vercel.app/ "store")! :dog:
